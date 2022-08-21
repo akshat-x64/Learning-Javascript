@@ -1,0 +1,33 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(243, 215, 175);
+  padding: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 30px;
+}
+h1,
+h2,
+h3 {
+  font-size: 40px;
+  padding-bottom: 20px;
+  text-align: center;
+}
+p {
+  color: chocolate;
+  padding: 20px;
+}
+form {
+  background-color: brown;
+  margin: 30px;
+  padding: 30px;
+  width: 400px;
+  border: 5px solid #444;
+}
+img {
+  width: 400px;
+}

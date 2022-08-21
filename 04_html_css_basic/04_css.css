@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgb(250, 219, 168);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    padding: 20px;
+
+}
+h1{
+    
+    margin-bottom: 20px;
+    text-align: center;
+}
+h2{
+    margin: 20px;
+    text-align: center;
+}
+p{
+    margin: 20px;
+}
+.sample{
+    color: rgb(240, 20, 20);
+}
+
+#your-name{
+    background-color: rgb(249, 253, 15);
+    border: 5px red;
+    width: 400px;
+    padding: 25px;
+    margin-top: 30px;
+}
+
+#yourname h3{
+    color: blue;
+}
