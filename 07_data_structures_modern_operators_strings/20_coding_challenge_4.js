@@ -25,34 +25,40 @@ name conversion working 😉
 § This challenge is difficult on purpose, so start watching the solution in case
 you're stuck. Then pause and continue!
 */
-// document.body.append(document.createElement("textarea"));
-// document.body.append(document.createElement("button"));
+document.body.append(document.createElement("textarea"));
+document.body.append(document.createElement("button"));
+const arr = [];
+document.querySelector("button").addEventListener("click", function () {
+  const text = document.querySelector("textarea").value;
+  const text3 = text.toLocaleLowerCase().trim();
+  const text2 = text3.split("\n");
 
-// document.querySelector("button").addEventListener("click", function () {
-//   const text = document.querySelector("textarea").value;
-//   console.log(text);
-// });
+  console.log(text2);
+  const stringCamel = function (aaa) {
+    console.log(aaa);
+    let a11 = 1;
+    for (const aData of aaa) {
+      const [part1, part2] = aData.split("_");
+      // console.log(part1, part2);
+      const part22 = part2.replace(part2[0], part2[0].toUpperCase());
+      let result = part1.concat(part22);
 
-const stringCamel = function (stringData) {
-  const aaa = stringData.split(" ");
-  console.log(aaa);
-  for (const aData of aaa) {
-    const [part1, part2] = aData.split("_");
-    // console.log(part1, part2);
-    const part22 = part2.replace(part2[0], part2[0].toUpperCase());
-    let result = part1.concat(part22);
-    console.log(result);
-  }
-};
-const dataPage =
-  "underscore_case
-  first_name
-  Some_Variable
-  calculate_AGE
-  delayed_departure";
+      console.log(result.padEnd(20, " "), `${"✅".repeat(a11)}`);
+      // arr.push(result);
+      a11++;
+    }
+  };
+  stringCamel(text2);
+  // console.log(arr.pa);
+  //
+  // for (const aaa of arr) {
+  //   console.log(`the ${aaa}  ${"✅".repeat(a11)}`);
+  //   a11++;
+  // }
+});
 
-const datapage = dataPage.replace(" ", " ");
-console.log(datapage);
+// const datapage = dataPage.replace(" ", " ");
+// console.log(datapage);
 // stringCamel(dataPage);
 
 // const aaa = "Akshat_dwivedi";
