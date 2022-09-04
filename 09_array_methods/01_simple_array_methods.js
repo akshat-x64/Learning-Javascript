@@ -4,20 +4,20 @@ const arr = ["a", "k", "s", "h", "a", "t"];
 console.log(arr);
 
 //slicing mehod
-// console.log(arr.slice(1));
+console.log(arr.slice(1));
 console.log(arr.slice(1, 4));
-// console.log(arr.slice(-2));
-// console.log(arr.slice(-1));
-// console.log(arr.slice(1, -2));
+console.log(arr.slice(-2));
+console.log(arr.slice(-1));
+console.log(arr.slice(1, -2));
 let arr2 = arr.slice();
-// console.log(arr2);
+console.log(arr2);
 arr2 = [...arr];
-// console.log(arr2);
+console.log(arr2);
 
 //splicing method
-// arr.splice(1);
-// console.log(arr);
-// arr.splice(-1);
+arr.splice(1);
+console.log(arr);
+arr.splice(-1);
 console.log(arr);
 arr.splice(1, 4);
 console.log(arr);
