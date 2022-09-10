@@ -47,3 +47,8 @@ console.log(aaa);
 const final = aaa.filter(function (acc) {
   return acc > 0;
 });
+const final1 = final.reduce(function (acc, mov) {
+  return mov + acc;
+});
+console.log(final1);
+console.log(return1.flatMap((acc) => acc));
