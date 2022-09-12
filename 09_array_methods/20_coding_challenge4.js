@@ -46,7 +46,7 @@ const dogs = [
 // recommendedFood = weight ** 0.75 * 28. (The result is in grams of
 // food, and the weight needs to be in kg)
 //1.
-dogs.forEach(function (data, i) {
+dogs.forEach(function (data) {
   data.recommendedFood = Math.trunc(data.weight ** 0.75 * 28);
 });
 // console.log(dogs);
@@ -63,11 +63,11 @@ dogs.forEach(function (data, i) {
 });
 //alternate
 const sarahDog = dogs.find((aa) => aa.owners.includes("Sarah"));
-// console.log(
-//   `The dog is eating ${
-//     sarahDog.curFood > sarahDog.recommendedFood ? "Much" : "Less"
-//   }`
-// );
+console.log(
+  `The dog is eating ${
+    sarahDog.curFood > sarahDog.recommendedFood ? "Much" : "Less"
+  }`
+);
 // 3
 const ownersEatTooMuch = [];
 const ownersEatTooLittle = [];
@@ -80,15 +80,15 @@ dogs.forEach(function (dog) {
   }
 });
 
-// console.log(ownersEatTooMuch);
-// console.log(ownersEatTooLittle);
+console.log(ownersEatTooMuch);
+console.log(ownersEatTooLittle);
 // 4.
 // "Matilda and
 // Alice and Bob's dogs eat too much!" and "Sarah and John and Michael's dogs eat
 // too little!"
 
-// console.log(`${ownersEatTooMuch.flat().join(" and ")}dogs eat too much! `);
-// console.log(`${ownersEatTooLittle.flat().join(" and ")}dogs eat too much! `);
+console.log(`${ownersEatTooMuch.flat().join(" and ")}dogs eat too much! `);
+console.log(`${ownersEatTooLittle.flat().join(" and ")}dogs eat too much! `);
 //5.
 // dogs.forEach(function (data, i) {
 //   if (data.curFood === data.recommendedFood) {
@@ -104,16 +104,15 @@ const decision = dogs.some(
     dog.curFood > dog.recommendedFood * 0.9 &&
     dog.curFood < dog.recommendedFood * 1.1
 );
-7;
-console.log(
-  dogs.filter(
-    (dog) =>
-      dog.curFood > dog.recommendedFood * 0.9 &&
-      dog.curFood < dog.recommendedFood * 1.1
-  )
+console.log(decision);
+const arr123 = dogs.filter(
+  (dog) =>
+    dog.curFood > dog.recommendedFood * 0.9 &&
+    dog.curFood < dog.recommendedFood * 1.1
 );
+console.log(arr123);
 //8.
 const dogsSorted = dogs
   .slice()
   .sort((a, b) => a.recommendedFood - b.recommendedFood);
-console.log(dogsSorted);
+// console.log(dogsSorted);
