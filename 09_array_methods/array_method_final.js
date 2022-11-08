@@ -1,6 +1,6 @@
 "use strict";
-let movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 // Hi, a shallow copy is a copy in which if we make any changes then in the original also the changes will get reflected, usually in case of objects.
+let movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 //find length of arr
 console.log(movements.length);
 //to check if element exists ornot
@@ -68,6 +68,7 @@ for (const [index, iterator] of movements.entries()) {
 }
 console.log("--------------------------------------------------");
 
+//for each
 //continue; and break; dosent work on
 movements.forEach((amount, index, whole_arr) => {
   if (amount > 0) {
@@ -131,3 +132,50 @@ const movementsDescriptions = movements.map(function (data, i, arr) {
   }:You ${data > 0 ? "deposited" : "withdrew"} ${Math.abs(data)} `;
 });
 console.log(movementsDescriptions);
+
+//filter method
+movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+const finalFilter = movements.filter(function (aa) {
+  return aa > 0;
+});
+console.log(finalFilter);
+//filter alternative using for each method
+
+const filterForEach = [];
+movements.forEach(function (aa) {
+  aa > 0 ? filterForEach.push(aa) : "aa";
+});
+console.log(filterForEach);
+
+const withdrawal = movements.filter(function (a) {
+  return a < 0;
+});
+console.log(withdrawal);
+
+//reduce method
+//convert  all the elements in an array to one single value.
+
+movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+//so accumulator is an snowball that keeps on adding to the value
+//so can also specify or set inital value of the accumulator
+const balance = movements.reduce(function (acc, value, idex, arr) {
+  console.log(`iteration ${idex + 1}: ${acc}`);
+  return acc + value;
+}, 0);
+
+//snow ball efect
+console.log(balance);
+//reducing using forof loop
+let balance1 = 0;
+for (const iterator of movements) {
+  balance1 += iterator;
+}
+console.log(balance);
+
+movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+const max1 = movements.reduce(function (acc, value, index) {
+  if (acc > value) return acc;
+  else return value;
+}, movements[0]);
+console.log(max1);
