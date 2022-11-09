@@ -175,7 +175,168 @@ console.log(balance);
 movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 const max1 = movements.reduce(function (acc, value, index) {
+  console.log(acc, value);
   if (acc > value) return acc;
   else return value;
 }, movements[0]);
 console.log(max1);
+
+//chaining method
+//pipeline method
+//chaining can have performance issue
+// to not chain a method that can mutate a array
+//always method that can return the array
+const balanceUSD = movements
+  .filter((data) => data > 0)
+  // .map((data) => data * 1.1)
+  .map((data, i, arr) => {
+    // console.log(arr);
+    return data * 1.1;
+  })
+  .reduce((acc, data) => acc + data);
+console.log(balanceUSD);
+
+//find method in js
+movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+const find = movements.find((value) => value < 0);
+console.log(find);
+//find method is very silimar to filter method but only difference is filter method returns
+//and array of elements and find method returns only a single first element
+
+const account1 = {
+  owner: "Jonas Schmedtmann",
+  movements: [200, 450, -400, 3000, -650, -130, 70, 1300],
+  interestRate: 1.2, // %
+  pin: 1111,
+};
+
+const account2 = {
+  owner: "Jessica Davis",
+  movements: [5000, 3400, -150, -790, -3210, -1000, 8500, -30],
+  interestRate: 1.5,
+  pin: 2222,
+};
+
+const account3 = {
+  owner: "Steven Thomas Williams",
+  movements: [200, -200, 340, -300, -20, 50, 400, -460],
+  interestRate: 0.7,
+  pin: 3333,
+};
+
+const account4 = {
+  owner: "Sarah Smith",
+  movements: [430, 1000, 700, 50, 90],
+  interestRate: 1,
+  pin: 4444,
+};
+
+const accounts = [account1, account2, account3, account4];
+
+const userFind = accounts.find((aa) => aa.owner === "Sarah Smith");
+console.log(userFind);
+
+//find index method
+//this is also another method which helps in finding the index
+//this also works as the same way as find method
+
+const findAcc = accounts.findIndex(function (value, i, acc) {
+  return value.owner === "Steven Thomas Williams";
+});
+
+console.log(findAcc);
+
+movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+// some and every
+console.log(movements);
+//equality
+console.log(movements.includes(-130));
+//some method
+//some method helps us to know if given contition is true or not
+//and it should true with any element in the array
+//condition
+const anyDeposits = movements.some((move) => move > 200);
+console.log(anyDeposits);
+
+//every method
+//every element has to
+const everyMethod = movements.every((move) => move > 0);
+console.log(everyMethod);
+
+//new array method
+//flat method
+//level 1
+const arr123 = [
+  [1, 2, 3, 4],
+  [4, 6, 7],
+];
+console.log(arr.flat(1));
+//level 2
+const arrDeep = [[[1, 2, [2, 4], 32], 32]];
+console.log(arrDeep.flat(3));
+
+//flatMap method
+const final123 = accounts
+  .flatMap((data) => data.movements)
+
+  // .filter((data) => data > 0)
+  .reduce((acc, data, i, arr) => acc + data, 0);
+console.log(final123);
+//for going more deep we need to write seperate map
+//flatmap is good for performance
+
+//sorting arrays
+
+//sorting method works only on strings we have to only modify
+const name = ["AKshat", "dwivedi", "nagdiya", "sheth"];
+name.sort();
+console.log(name);
+//if we want to sort number the we have to pass a call back function
+// +1 for swap and -1 for not to swap
+const num1 = [45, 67, 8, 433, 324, 45, 5, 4];
+num1.sort(function (a, b) {
+  if (a > b) {
+    return 1;
+  }
+  if (a < b) {
+    return -1;
+  }
+});
+console.log(num1);
+
+//array fill method
+const arr12 = [1, 2, 3, 4, 5, 6, 7, 8];
+console.log(new Array(1, 2, 3, 4, 5));
+
+//empty array + fill method
+const x = new Array(7);
+console.log(x);
+x.fill(1, 2, 5);
+console.log(x);
+x.fill(1);
+
+arr12.fill(23, 2, 5);
+console.log(arr12);
+
+//array.from
+//this is not method this is type of contructor
+//array.from is a technique in which we can create a array in a sequence
+const zz = Array.from({ length: 7 }, (value, i) => i + 1);
+console.log(zz);
+
+labelBalance.addEventListener("click", function () {
+  console.log(document.querySelectorAll(".movements__value"));
+  const movementsUI = Array.from(
+    document.querySelectorAll(".movements__value"),
+    (el) => Number(el.textContent.replace("€"), "")
+  );
+  console.log(movementsUI);
+  const aa = document.querySelectorAll(".movements__value");
+  console.log(aa);
+  const aa12 = [];
+  for (const iterator of aa) {
+    aa12.push(iterator.textContent);
+  }
+  console.log(aa12);
+});
