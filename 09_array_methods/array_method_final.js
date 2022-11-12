@@ -340,3 +340,30 @@ labelBalance.addEventListener("click", function () {
   }
   console.log(aa12);
 });
+
+
+
+//copying data from html web page
+
+labelBalance.addEventListener("click", function () {
+  // console.log(document.querySelectorAll(".movements__value"));
+  // const movementsUI = Array.from(
+  //   document.querySelectorAll(".movements__value"),
+  //   (el) => Number(el.textContent.replace("€"), "")
+  // );
+  // console.log(movementsUI);
+  const aa = document.querySelectorAll(".movements__value");
+  // console.log(aa);
+  // const aa12 = [];
+  // for (const iterator of aa) {
+  //   aa12.push(iterator.textContent);
+  // }
+  // console.log(aa12);
+  const bb = [];
+  for (const iterator of aa) {
+    bb.push(iterator.textContent);
+  }
+  for (const iterator of bb) {
+    console.log(bb);
+  }
+});
